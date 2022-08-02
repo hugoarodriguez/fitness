@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//const element = document.createElement('h1');
+//element.innerText = "Hello React";
+//const container = document.getElementById('root');
+//container.appendChild(element);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import React from "react";
+import ReactDOM from "react-dom";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const user = {
+    firstName : 'Hugo',
+    lastName : 'Rodríguez',
+    avatar : 'https://cdn-icons.flaticon.com/png/512/1144/premium/1144709.png?token=exp=1659484942~hmac=6f052108097fb3db38a2c67eeb828867',
+};
+
+function getName(user){
+    return `${user.firstName} ${user.lastName}`;
+}
+
+function getGreeting(user){
+    if(user){
+        return <h1>Hello {getName(user)}</h1>;
+    }
+    return <h1>Hello Stranger </h1>;
+}
+
+const element = (
+    <div>
+        {getGreeting(user)}
+        <img src={user.avatar} width="256" height="256" alt="userImage"/>
+    </div>);
+const container = document.getElementById('root');
+
+//ReactDOM.render(QUE,DONDE)
+ReactDOM.render(element, container)
