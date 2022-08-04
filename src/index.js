@@ -4,11 +4,18 @@
 //container.appendChild(element);
 
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import Exercises from "./pages/Exercises";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const container = document.getElementById('root');
+//const container = document.getElementById('root');
 
 //ReactDOM.render(QUE,DONDE)
-ReactDOM.render(<Exercises/> , container)
+//ReactDOM.render(<Exercises/> , container)
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+      <Exercises/>
+    </React.StrictMode>
+  );
