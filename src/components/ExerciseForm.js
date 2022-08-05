@@ -1,22 +1,16 @@
 import React from "react";
 
-class ExercisesNew extends React.Component {
-
-    state = {};
+class ExercisesForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state);
-    }
-
-    handleChange = e => {
         
-        this.setState({
-            [e.target.name]: e.target.value
-        });
     }
 
     render(){
+        
+        const { onChange, form } = this.props;
+
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit}>
@@ -26,8 +20,8 @@ class ExercisesNew extends React.Component {
                             placeholder="Title"
                             type="text"
                             name="title"
-                            onChange={this.handleChange}
-                            value={this.state.title || ''}
+                            onChange={onChange}
+                            value={form.title || ''}
                         />
                     </div>
                     <div className="mb-3">
@@ -36,8 +30,8 @@ class ExercisesNew extends React.Component {
                             placeholder="Description"
                             type="text"
                             name="description"
-                            onChange={this.handleChange}
-                            value={this.state.description || ''}
+                            onChange={onChange}
+                            value={form.description || ''}
                         />
                     </div>
                     <div className="mb-3">
@@ -46,8 +40,8 @@ class ExercisesNew extends React.Component {
                             placeholder="Image"
                             type="text"
                             name="img"
-                            onChange={this.handleChange}
-                            value={this.state.img || ''}
+                            onChange={onChange}
+                            value={form.img || ''}
                         />
                     </div>
                     <div className="row mb-3">
@@ -57,8 +51,8 @@ class ExercisesNew extends React.Component {
                                 placeholder="Left Color"
                                 type="text"
                                 name="leftColor"
-                                onChange={this.handleChange}
-                                value={this.state.leftColor || ''}
+                                onChange={onChange}
+                                value={form.leftColor || ''}
                             />
                         </div>
                         <div className="col">
@@ -67,8 +61,8 @@ class ExercisesNew extends React.Component {
                                 placeholder="Right Color"
                                 type="text"
                                 name="rightColor"
-                                onChange={this.handleChange}
-                                value={this.state.rightColor || ''}
+                                onChange={onChange}
+                                value={form.rightColor || ''}
                             />
                         </div>
                     </div>
@@ -83,4 +77,4 @@ class ExercisesNew extends React.Component {
     }
 }
 
-export default ExercisesNew;
+export default ExercisesForm;
