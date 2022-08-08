@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState} from "react";
 
 import Exercises from "./Exercises";
 import Loading from "../components/Loading";
 import FatalError from "./500";
 
-class ExercisesContainer extends React.Component{
+const ExercisesContainer = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    if(loading){
+        return <Loading/>
+    }
+    if(error){
+        return <FatalError/>
+    }
+
+    return(
+        <React.Fragment>
+            <Exercises
+                data={data}
+            />
+        </React.Fragment>
+    );
+}
+
+export default ExercisesContainer;
+
+/*class ExercisesContainer extends React.Component{
 
     state = {
         data: [],
@@ -56,4 +79,4 @@ class ExercisesContainer extends React.Component{
     }
 }
 
-export default ExercisesContainer;
+export default ExercisesContainer;*/
