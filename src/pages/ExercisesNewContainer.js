@@ -1,10 +1,10 @@
 import React from "react";
-import ExercisesForm from "../components/ExerciseForm";
-import Card from "../components/Card";
+
 import "../components/styles/ExerciseNew.css";
 import FatalError from "./500";
+import ExercisesNew from "./ExercisesNew";
 
-class ExercisesNew extends React.Component {
+class ExercisesNewContainer extends React.Component {
 
     state = {
         form: {
@@ -47,7 +47,7 @@ class ExercisesNew extends React.Component {
                 body: JSON.stringify(this.state.form)
             }
 
-            await fetch('http://localhost:8000/api/exercises', config);
+            await fetch('http://localhost:8000/api/exercises', config)
 
             this.setState({
                 loading: false
@@ -62,8 +62,6 @@ class ExercisesNew extends React.Component {
                 error
             });
         }
-
-        //console.log(this.state);
     }
 
     render(){
@@ -71,21 +69,12 @@ class ExercisesNew extends React.Component {
             return <FatalError/>
         }
 
-        return (
-            <div className="ExerciseNew_Lateral_Spaces row">
-                <div className="col-sm ExerciseNew_Card_Space">
-                    <Card {...this.state.form}/>
-                </div>
-                <div className="col-sm ExerciseNew_Card_Space">
-                    <ExercisesForm
-                        onChange={this.handleChange}
-                        onSubmit={this.handleSubmit}
-                        form={this.state.form}
-                    />
-                </div>
-             </div>
-        );
+        return <ExercisesNew
+                form={this.state.form}
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                />;
     }
 }
 
-export default ExercisesNew;
+export default ExercisesNewContainer;
