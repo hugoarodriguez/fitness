@@ -1,38 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../components/styles/ExerciseNew.css";
 import FatalError from "./500";
 import ExercisesNew from "./ExercisesNew";
 
-class ExercisesNewContainer extends React.Component {
+function ExercisesNewContainer() {
 
-    state = {
-        form: {
-            title : '', 
-            description : '', 
-            img : '', 
-            leftColor: '', 
-            rightColor: ''
-        },
-        loading: false,
-        error: null
-    }
+    let navigate = useNavigate();
 
-    handleChange = e => {
-        
-        this.setState({
-            form: {
-                ...this.state.form,
+    const [form, setForm] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const handleChange = e => {
+
+        setForm({
+            ...form,
                 [e.target.name]: e.target.value
-            }
         });
     }
 
-    handleSubmit = async e => {
+    const handleSubmit = async e => {
 
-        this.setState({
-            loading: true
-        });
+        setLoading(true);
 
         e.preventDefault();
 
@@ -44,37 +35,36 @@ class ExercisesNewContainer extends React.Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(this.state.form)
+                body: JSON.stringify(form)
             }
 
             await fetch('http://localhost:8000/api/exercises', config)
-
-            this.setState({
-                loading: false
-            });
+            setLoading(false);
 
             //Agregar push de navegación a página /exercises
+            navigate('/exercise');
 
         } catch (error) {
             
-            this.setState({
-                loading: true,
-                error
-            });
+            setLoading(true);
+            setError(error);
+            console.log(error);
         }
     }
 
-    render(){
-        if(this.state.error){
-            return <FatalError/>
-        }
-
-        return <ExercisesNew
-                form={this.state.form}
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                />;
+    if(error){
+        return <FatalError/>
     }
+
+    if(error){
+        return <FatalError/>
+    }
+
+    return <ExercisesNew
+            form={form}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            />;
 }
 
 export default ExercisesNewContainer;
