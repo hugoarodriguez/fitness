@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../components/styles/ExerciseNew.css";
 import FatalError from "./500";
 import ExercisesNew from "./ExercisesNew";
+import URL_API from "../config";
 
 function ExercisesNewContainer() {
 
@@ -38,7 +39,7 @@ function ExercisesNewContainer() {
                 body: JSON.stringify(form)
             }
 
-            await fetch('http://localhost:8000/api/exercises', config)
+            await fetch(`${URL_API}/exercises`, config)
             setLoading(false);
 
             //Agregar push de navegación a página /exercises
