@@ -1,0 +1,26 @@
+.navbar-line{
+    background-color: #FF78A8 !important;
+}
+
+#navbar-container{
+    background-color: #ffffff !important;
+}
+
+.navbar-brand {
+    color: #FF78A8 !important;
+}
+
+.navbar-nav a{
+    color: #FF78A8 !important;
+}
+
+/*Quitar flecha del DropDownList*/
+.dropdown-toggle::after {
+    display: none !important; 
+}
+
+/*Centrar elementos de forma vertical*/
+.center-vertically {
+    align-items: center;
+    display: flex;
+}
