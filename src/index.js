@@ -15,9 +15,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //ReactDOM.render(QUE,DONDE)
 //ReactDOM.render(<Exercises/> , container)
 
+//Se deshabilitó el "React.StrictMode" porque con eso activado no funciona el Drag and Drop de "react-beautiful-dnd"
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
+    /*<React.StrictMode>*/
       <App/>
-    </React.StrictMode>
+    /*</React.StrictMode>*/
   );
