@@ -1,67 +1,63 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { RiFacebookCircleLine, RiInstagramLine, RiWhatsappLine } from 'react-icons/ri';
+
 import "../components/styles/Footer.css";
-//import moresLogoImg from "../images/mores-logo.jfif";
+import moresLogoImg from "../images/mores-logo.jfif";
 
 const Footer = () => {
 
     return (
-        <div className="container" id="footer-component">
-            <footer className="py-5">
+        <footer className="pt-4 pb-0" id="footer-component">
+            <div className="container">
                 <div className="row">
-                    <div className="col-2">
-                        <h5>Section</h5>
-                        <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Home</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Features</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Pricing</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">FAQs</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">About</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="col-2">
-                        <h5>Section</h5>
-                        <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Home</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Features</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Pricing</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">FAQs</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">About</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="col-2">
-                        <h5>Section</h5>
-                        <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Home</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Features</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">Pricing</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">FAQs</a></li>
-                            <li className="nav-item mb-2"><a href="/ruta" className="nav-link p-0 text-muted">About</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="col-4 offset-1">
-                        <form>
-                            <h5>Subscribe to our newsletter</h5>
-                            <p>Monthly digest of whats new and exciting from us.</p>
-                            <div className="d-flex w-100 gap-2">
-                                <label htmlFor="newsletter1" className="visually-hidden">Email address</label>
-                                <input id="newsletter1" type="text" className="form-control" placeholder="Email address"/>
-                                    <button className="btn btn-primary" type="button">Subscribe</button>
+                    <div className="col-6">
+                        <div className="row justify-content-center">
+                            <div className="col-6 text-center">
+                                <img
+                                    alt=""
+                                    src={moresLogoImg}
+                                    width="100"
+                                    height="100"
+                                />
                             </div>
-                        </form>
+                        </div>
+                        <div className="row p-4 justify-content-center">
+                            <div className="col-2 text-center text-white">
+                                <a href="https://www.facebook.com/Mores-2061829620752384/" target="_blank" rel="noopener noreferrer" className="nav-link p-0">
+                                    <span><RiFacebookCircleLine size="2.2em" /></span>
+                                </a>
+                            </div>
+                            <div className="col-2 text-center text-white">
+                                <a href="https://www.instagram.com/mores.sss/" target="_blank" rel="noopener noreferrer" className="nav-link p-0">
+                                    <span><RiInstagramLine size="2.2em" /></span>
+                                </a>
+                            </div>
+                            <div className="col-2 text-center text-white">
+                                <a href="https://www.instagram.com/mores.sss/" target="_blank" rel="noopener noreferrer" className="nav-link p-0">
+                                    <span><RiWhatsappLine size="2.2em" /></span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div><div className="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>© 2021 Company, Inc. All rights reserved.</p>
-                    <ul className="list-unstyled d-flex">
-                        <li className="ms-3"><a className="link-dark" href="/ruta"><svg className="bi" width="24" height="24"></svg></a></li>
-                        <li className="ms-3"><a className="link-dark" href="/ruta"><svg className="bi" width="24" height="24"></svg></a></li>
-                        <li className="ms-3"><a className="link-dark" href="/ruta"><svg className="bi" width="24" height="24"></svg></a></li>
-                    </ul>
+                    <div className="col-6">
+                        <div className="row">
+                            <ul className="nav flex-column">
+                                <li className="nav-item mb-2"><Link to="/login" className="nav-link p-0 text-white">FAQ</Link></li>
+                                <li className="nav-item mb-2"><Link to="/login" className="nav-link p-0 text-white">ENVÍOS</Link></li>
+                                <li className="nav-item mb-2"><Link to="/login" className="nav-link p-0 text-white">ACERCA DE</Link></li>
+                                <li className="nav-item mb-2"><Link to="/login" className="nav-link p-0 text-white">TERMINOS Y CONDICIONES</Link></li>
+                            </ul>
+                        </div>
+                        <div className="row">
+                            <div className="d-flex justify-content-end border-top text-white">
+                                <p>© 2022 Pastelería More's. Todos los derechos reservados.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
     );
 }
 export default Footer;

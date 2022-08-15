@@ -1,3 +1,7 @@
-#container{
-    background-color: #FF78A8;
+#container-component{
+    background-color: #FFFFFF;
 }
+
+main {
+    min-height: calc(100vh - 300px);
+  }

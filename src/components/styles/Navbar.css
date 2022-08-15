@@ -1,9 +1,10 @@
+#navbar-container {
+    border-bottom-color: #FF78A8!important;
+    background-color: #ffdeea !important;    
+  }
+
 .navbar-line{
     background-color: #FF78A8 !important;
-}
-
-#navbar-container{
-    background-color: #ffffff !important;
 }
 
 .navbar-brand {
@@ -11,6 +12,10 @@
 }
 
 .navbar-nav a{
+    color: #FF78A8 !important;
+}
+
+.nav border border-bottom{
     color: #FF78A8 !important;
 }
 

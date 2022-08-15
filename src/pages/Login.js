@@ -6,8 +6,26 @@ import "../components/styles/Login.css";
 
 const Login = () => (
     <React.Fragment>
-        <div id="container">
+        <div id="container-component">
             <Navbarmenu/>
+            <main>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+                <p>Page content</p>
+            </main>
             <Footer/>
         </div>
     </React.Fragment>
