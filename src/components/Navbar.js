@@ -11,13 +11,16 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 const Navbarmenu = () => {
 
-    const userIcon = <span><AiOutlineUser size="2em"/></span>
+    const userIcon = <span><AiOutlineUser size="2em" /></span>
+
+    //Prueba almacenamiento de información
+    let obj = { name: 'Hugo', email: 'hugsrodriguez8@gmail.com' };
 
     return (
         <React.Fragment>
             <div className="sticky-top">
 
-                <Navbar className="navbar-line"/>
+                <Navbar className="navbar-line" />
                 <Navbar expand="lg" id="navbar-container">
                     <Container>
                         <Navbar.Brand href="#home" className="center-vertically" >
@@ -36,6 +39,12 @@ const Navbarmenu = () => {
                             <Nav className="ms-auto center-vertically">
                                 <Nav.Link href="/exercise">NUESTRA HISTORIA</Nav.Link>
                                 <NavDropdown title={userIcon} id="basic-nav-dropdown">
+                                    {
+                                    //Condicionante para mostrar diferente contenido
+                                    obj.email != '' &&
+                                        <Nav.Link href="/exercise">Logout</Nav.Link>
+
+                                    }
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.2">
                                         Another action
@@ -47,7 +56,7 @@ const Navbarmenu = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 <Nav.Link href="/exercise">
-                                    <span><FiShoppingCart size="1.7em"/></span>
+                                    <span><FiShoppingCart size="1.7em" /></span>
                                 </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
