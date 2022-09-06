@@ -1,11 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Login from "./Login";
-import "../components/styles/Login.css";
 
-function LoginContainer(){
+const LoginContainer = () => {
+
+    const [form, setForm] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const handleChange = e => {
+
+        setForm({
+            ...form,
+                [e.target.name]: e.target.value
+        });
+    }
+
+    const handleSubmit = e => {
+
+        e.preventDefault();
+
+        /*let user = new User();
+
+        user.setEmail(form.email);
+        user.setPasswordU(form.passwordU);
+
+        console.log(user);*/
+
+    }
+
     return(
-        <Login/>
+        <Login
+            form={form}
+            onSubmit={handleSubmit}
+            onChange={handleChange}
+        />
     );
 }
 

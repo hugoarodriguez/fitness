@@ -52,6 +52,28 @@ const mockData = [
                 "title": 'Learn HTML',
             },
         ]
+    },
+    {
+        "id": "4",
+        "icon": icon3,
+        "title": 'Add',
+        "tasks": [
+            {
+                "id": "7",
+                "title": 'Learn HTML',
+            },
+        ]
+    },
+    {
+        "id": "5",
+        "icon": icon3,
+        "title": 'Completed 2',
+        "tasks": [
+            {
+                "id": "8",
+                "title": 'Learn HTML',
+            },
+        ]
     }
 ];
 
